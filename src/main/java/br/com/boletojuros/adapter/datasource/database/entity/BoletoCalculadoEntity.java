@@ -28,12 +28,10 @@ public class BoletoCalculadoEntity {
     private BigDecimal valor;
 
     @Column(name = "data_nascimento")
-    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
-    private LocalDateTime dataNascimento;
+    private String dataNascimento = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     @Column(name = "data_pagamento")
-    private LocalDateTime dataPagamento;
+    private String dataPagamento = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
     private BigDecimal juros;
     private TipoBoleto tipo;
